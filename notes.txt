@@ -1,0 +1,33 @@
+nvm 20
+serverless framework version  node 20.11.1, framework 3.36.0
+
+create iam user serlerlessUser
+serverless config credentials --provider aws --key <your-aws-access-key> --secret <your-aws-secret-key> --profile <profile-name>
+nano ~/.aws/credentials
+
+initiate new project 
+serverless create --template aws-nodejs-typescript
+
+install the dependancies 
+npm install
+npm install aws-sdk -save-
+work on the directory structure
+
+
+Dynamodb necessary setup
+plan for the data model first
+maitain the serverless/resourcesDynamo.ts
+declare the dynamoResources in the resources sections at serverless.ts
+also add the iam section
+npm i --save @aws-sdk/client-dynamodb -save
+
+setup cognito pool
+
+
+npx create-react-app frontend --template typescript
+
+npm i -S aws-amplify @aws-amplify/ui-react
+npm install react-toastify
+
+https://getmycognitotoken.com/?region=us-east-1
+
