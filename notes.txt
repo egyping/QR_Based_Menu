@@ -31,3 +31,11 @@ npm install react-toastify
 
 https://getmycognitotoken.com/?region=us-east-1
 
+
+Admin frontend
+npx create-react-app admin-frontend --template typescript
+npm install
+npm install aws-amplify @aws-amplify/ui-react axios
+npm install react-router-dom aws-amplify
+npm install @aws-amplify/api @aws-amplify/core
+npm install @aws-amplify/api-rest @aws-amplify/auth
