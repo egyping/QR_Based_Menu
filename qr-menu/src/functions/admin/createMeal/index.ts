@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 const dynamodb = new DynamoDB.DocumentClient();
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-  const { title, description, price, imageUrl } = JSON.parse(event.body || '{}');
+  const { title, description, price, imageUrl, status } = JSON.parse(event.body || '{}');
 
   try {
     const mealId = uuid();
@@ -15,6 +15,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       description,
       price,
       imageUrl,
+      status,
       createdAt: new Date().toISOString(),
     };
 

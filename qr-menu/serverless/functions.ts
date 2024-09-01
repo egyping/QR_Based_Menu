@@ -1,5 +1,5 @@
 import type { AWS } from '@serverless/typescript'
-//import type { AWS } from '@serverless/typescript';
+
 
 interface Authorizer {
   name: string;
@@ -58,8 +58,10 @@ const functions: AWS['functions'] = {
     events: [
       {
         http: {
-          method: 'get',
-          path: 'meals',
+          method: 'post',
+          path: 'allmeals',
+          cors: corsSettings,
+          authorizer,
         },
       },
     ],
@@ -77,6 +79,21 @@ const functions: AWS['functions'] = {
       },
     ],
   },
+
+  updateMeal: {
+    handler: 'src/functions/admin/updateMeal/index.handler',
+    events: [
+      {
+        http: {
+          method: 'put',
+          path: 'meals/{mealId}',
+          cors: corsSettings,
+          authorizer,
+        },
+      },
+    ],
+  },
+
 };
 
 

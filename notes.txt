@@ -1,3 +1,17 @@
+== Progress ==
+
+-------
+Backend
+-------
+login --  returning unauthorized from postman and able to login from amplify
+get meals --    GET --   working 
+create meal --  POST --     working 
+list meals  -- POST --  working
+update meal --  put -- working
+
+
+========================================
+
 nvm 20
 serverless framework version  node 20.11.1, framework 3.36.0
 
@@ -39,3 +53,9 @@ npm install aws-amplify @aws-amplify/ui-react axios
 npm install react-router-dom aws-amplify
 npm install @aws-amplify/api @aws-amplify/core
 npm install @aws-amplify/api-rest @aws-amplify/auth
+
+Backend so far 
+login --  returning unauthorized from postman and able to login from amplify
+get meals --    GET --   working 
+create meal --  POST --     working 
+list meals
