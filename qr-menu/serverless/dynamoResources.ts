@@ -8,14 +8,14 @@ const dynamoResources: AWS['resources']['Resources'] = {
       TableName: '${self:custom.stage}-Meals',
       AttributeDefinitions: [
         { AttributeName: 'mealId', AttributeType: 'S' },
-        { AttributeName: 'status', AttributeType: 'S' }, // Add the 'status' attribute
+        { AttributeName: 'status', AttributeType: 'S' },
       ],
       KeySchema: [
         { AttributeName: 'mealId', KeyType: 'HASH' },
       ],
       GlobalSecondaryIndexes: [
         {
-          IndexName: 'StatusIndex', // Add the 'StatusIndex' index
+          IndexName: 'StatusIndex',
           KeySchema: [
             { AttributeName: 'status', KeyType: 'HASH' },
           ],
@@ -54,29 +54,29 @@ const dynamoResources: AWS['resources']['Resources'] = {
     },
   },
 
-  OrderItemsTable: {
-    Type: 'AWS::DynamoDB::Table',
-    Properties: {
-      TableName: '${self:custom.stage}-OrderItems',
-      AttributeDefinitions: [
-        { AttributeName: 'orderItemId', AttributeType: 'S' },
-        { AttributeName: 'orderId', AttributeType: 'S' },
-      ],
-      KeySchema: [
-        { AttributeName: 'orderItemId', KeyType: 'HASH' },
-      ],
-      GlobalSecondaryIndexes: [
-        {
-          IndexName: 'OrderIdIndex',
-          KeySchema: [
-            { AttributeName: 'orderId', KeyType: 'HASH' },
-          ],
-          Projection: { ProjectionType: 'ALL' },
-        },
-      ],
-      BillingMode: 'PAY_PER_REQUEST',
-    },
-  },
+  // OrderItemsTable: {
+  //   Type: 'AWS::DynamoDB::Table',
+  //   Properties: {
+  //     TableName: '${self:custom.stage}-OrderItems',
+  //     AttributeDefinitions: [
+  //       { AttributeName: 'orderItemId', AttributeType: 'S' },
+  //       { AttributeName: 'orderId', AttributeType: 'S' },
+  //     ],
+  //     KeySchema: [
+  //       { AttributeName: 'orderItemId', KeyType: 'HASH' },
+  //     ],
+  //     GlobalSecondaryIndexes: [
+  //       {
+  //         IndexName: 'OrderIdIndex',
+  //         KeySchema: [
+  //           { AttributeName: 'orderId', KeyType: 'HASH' },
+  //         ],
+  //         Projection: { ProjectionType: 'ALL' },
+  //       },
+  //     ],
+  //     BillingMode: 'PAY_PER_REQUEST',
+  //   },
+  // },
 
   CustomersTable: {
     Type: 'AWS::DynamoDB::Table',
@@ -87,6 +87,30 @@ const dynamoResources: AWS['resources']['Resources'] = {
       ],
       KeySchema: [
         { AttributeName: 'mobileNumber', KeyType: 'HASH' },
+      ],
+      BillingMode: 'PAY_PER_REQUEST',
+    },
+  },
+
+  CartTable: {
+    Type: 'AWS::DynamoDB::Table',
+    Properties: {
+      TableName: '${self:custom.stage}-Cart',
+      AttributeDefinitions: [
+        { AttributeName: 'cartId', AttributeType: 'S' },
+        { AttributeName: 'customerMobileNumber', AttributeType: 'S' },
+      ],
+      KeySchema: [
+        { AttributeName: 'cartId', KeyType: 'HASH' },
+      ],
+      GlobalSecondaryIndexes: [
+        {
+          IndexName: 'CustomerMobileNumberIndex',
+          KeySchema: [
+            { AttributeName: 'customerMobileNumber', KeyType: 'HASH' },
+          ],
+          Projection: { ProjectionType: 'ALL' },
+        },
       ],
       BillingMode: 'PAY_PER_REQUEST',
     },

@@ -4,11 +4,106 @@
 Backend
 -------
 login --  returning unauthorized from postman and able to login from amplify
-get meals --    GET --   working 
-create meal --  POST --     working 
-list meals  -- POST --  working
-update meal --  put -- working
 
+Orders Table    --  deployed
+Meals Table    --  deployed
+customer Table    --  deployed
+Cart Table      --  deployed
+
+Admin Apis
+create meal --  POST --   working --    create new meal 
+list meals  -- POST --  working --  all meales regardles the status 
+update meal --  PUT -- working  -- to update existing meal 
+delete meal -- DELETE - 
+Orders  --  POST  --  Change order status 
+Order history --    POST    --  Query order history by customer mobile 
+
+Frontend Apis 
+All Meals   --  get meals --  GET --   working 
+Cart   -- POST  --  Working --  Add meal to cart "create new cart or amend existing"
+Cart   -- PUT   --  Working --  Increase \ Decrease the quantity of meal in exisiting cart 
+Cart   -- PUT   --  Working --  Remove meal from cart 
+Cart   -- DEL   --  Working --  Delete the cart in case the meal and the meal is the last meal in the cart 
+Orders -- POST  -- Working  -- Create Order take the cart data and create order with default status CREATED
+Orders -- PUT --        -- Change order status, will send ordernumber and the new status 
+Orders -- POST  --      --  send the customer mobile number to get the customer order history 
+
+== Data Model ==
+
+MealsTable:
+
+    Primary Key:    mealId (String)
+
+    Global Secondary Index:
+                    StatusIndex
+                    Partition Key: status (String)
+
+    Other Attributes:
+                    title (String)
+                    description (String)
+                    price (Number)
+                    imageUrl (String)
+                    createdAt (String)
+
+
+OrdersTable:
+
+    Primary Key:    orderId (String)
+
+    Global Secondary Index:
+                    CustomerMobileNumberIndex
+                    Partition Key: customerMobileNumber (String)
+                    Sort Key: createdAt (Number)
+
+    Other Attributes:
+                    customerName (String)
+                    tableNumber (String)
+                    totalAmount (Number)
+                    status (String)
+                    createdAt (Number)
+
+
+
+OrderItemsTable:
+
+    Primary Key:    orderItemId (String)
+
+    Global Secondary Index:
+                    OrderIdIndex
+                    Partition Key: orderId (String)
+
+    Other Attributes:
+                    mealId (String)
+                    quantity (Number)
+                    price (Number)
+
+
+
+
+CustomersTable:
+
+    Primary Key:    mobileNumber (String)
+
+
+    Other Attributes:
+                    name (String)
+                    createdAt (String)
+
+
+
+
+CartTable:
+
+Primary Key:    cartId (String)
+
+Other Attributes:
+                customerMobileNumber (String)
+                items (List)
+                mealId (String)
+                quantity (Number)
+                price (Number)
+                totalAmount (Number)
+                createdAt (String)
 
 ========================================
 

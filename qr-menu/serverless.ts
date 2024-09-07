@@ -23,6 +23,9 @@ const serverlessConfiguration: AWS = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
       MEALS_TABLE: '${self:custom.stage}-Meals',
+      CART_TABLE: '${self:custom.stage}-Cart',
+      ORDERS_TABLE: '${self:custom.stage}-Orders',
+      CUSTOMERS_TABLE: '${self:custom.stage}-Customers',
       COGNITO_USER_POOL_CLIENT_ID: { Ref: 'CognitoUserPoolClient' },
     },
 
@@ -42,9 +45,13 @@ const serverlessConfiguration: AWS = {
             Resource: [
               { 'Fn::GetAtt': ['MealsTable', 'Arn'] },
               { 'Fn::GetAtt': ['OrdersTable', 'Arn'] },
-              { 'Fn::GetAtt': ['OrderItemsTable', 'Arn'] },
+              //{ 'Fn::GetAtt': ['OrderItemsTable', 'Arn'] },
               { 'Fn::GetAtt': ['CustomersTable', 'Arn'] },
+              { 'Fn::GetAtt': ['CartTable', 'Arn'] },
+              { 'Fn::Join': ['/', [{ 'Fn::GetAtt': ['CartTable', 'Arn'] }, 'index/*']] },
               { 'Fn::Join': ['/', [{ 'Fn::GetAtt': ['MealsTable', 'Arn'] }, 'index/*']] },
+              { 'Fn::Join': ['/', [{ 'Fn::GetAtt': ['OrdersTable', 'Arn'] }, 'index/*']] },
+              { 'Fn::Join': ['/', [{ 'Fn::GetAtt': ['CustomersTable', 'Arn'] }, 'index/*']] },
             ],
           },
           {

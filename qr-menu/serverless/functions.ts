@@ -94,7 +94,79 @@ const functions: AWS['functions'] = {
     ],
   },
 
+  // Cart APIs \\
+  addToCart: {
+    handler: `src/functions/cart/addToCart/index.handler`,
+    events: [
+      {
+        http: {
+          method: "post",
+          path: "cart",
+          cors: corsSettings,
+          authorizer,
+        },
+      },
+    ],
+  },
+
+  increaseMealQuantity: {
+    handler: 'src/functions/cart/increaseMealQuantity/index.handler',
+    events: [
+      {
+        http: {
+          method: 'put',
+          path: 'cart/increase-quantity',
+          cors: corsSettings,
+          authorizer,
+        },
+      },
+    ],
+  },
+
+  removeMealFromCart: {
+    handler: 'src/functions/cart/removeMealFromCart/index.handler',
+    events: [
+      {
+        http: {
+          method: 'put',
+          path: 'cart/remove-meal',
+          cors: corsSettings,
+          authorizer,
+        },
+      },
+    ],
+  },
+
+  deleteCart: {
+    handler: 'src/functions/cart/deleteCart/index.handler',
+    events: [
+      {
+        http: {
+          method: 'delete',
+          path: 'cart',
+          cors: corsSettings,
+          authorizer,
+        },
+      },
+    ],
+  },
+  
+// Create Order
+createOrder: {
+  handler: 'src/functions/order/createOrder/index.handler',
+  events: [
+    {
+      http: {
+        method: 'post',
+        path: 'order',
+        cors: corsSettings,
+        authorizer,
+      },
+    },
+  ],
+},
+
+
+
 };
-
-
 export default functions;
