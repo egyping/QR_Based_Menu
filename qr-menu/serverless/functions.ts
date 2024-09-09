@@ -166,6 +166,19 @@ createOrder: {
   ],
 },
 
+changeOrderStatus: {
+  handler: 'src/functions/order/changeOrderStatus/index.handler',
+  events: [
+    {
+      http: {
+        method: 'put',
+        path: 'order/{orderId}/status',
+        cors: corsSettings,
+        authorizer,
+      },
+    },
+  ],
+},
 
 
 };

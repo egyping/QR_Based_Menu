@@ -26,6 +26,7 @@ Cart   -- PUT   --  Working --  Remove meal from cart
 Cart   -- DEL   --  Working --  Delete the cart in case the meal and the meal is the last meal in the cart 
 Orders -- POST  -- Working  -- Create Order take the cart data and create order with default status CREATED
 Orders -- PUT --        -- Change order status, will send ordernumber and the new status 
+Orders -- POST --       -- get list of orders per status 
 Orders -- POST  --      --  send the customer mobile number to get the customer order history 
 
 == Data Model ==
