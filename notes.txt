@@ -11,6 +11,7 @@ customer Table    --  deployed
 Cart Table      --  deployed
 
 Admin Apis
+login --    working     -- send user name and password get token 
 create meal --  POST --   working --    create new meal 
 list meals  -- POST --  working --  all meales regardles the status 
 update meal --  PUT -- working  -- to update existing meal 
@@ -151,26 +152,3 @@ Event Driven necessary setups
     second: create lambda take the mobile number from the order and send SMS using SNS SMS without topic 
 
 
-
-
-npx create-react-app frontend --template typescript
-
-npm i -S aws-amplify @aws-amplify/ui-react
-npm install react-toastify
-
-https://getmycognitotoken.com/?region=us-east-1
-
-
-Admin frontend
-npx create-react-app admin-frontend --template typescript
-npm install
-npm install aws-amplify @aws-amplify/ui-react axios
-npm install react-router-dom aws-amplify
-npm install @aws-amplify/api @aws-amplify/core
-npm install @aws-amplify/api-rest @aws-amplify/auth
-
-Backend so far 
-login --  returning unauthorized from postman and able to login from amplify
-get meals --    GET --   working 
-create meal --  POST --     working 
-list meals
