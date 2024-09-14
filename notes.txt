@@ -25,9 +25,10 @@ Cart   -- PUT   --  Working --  Increase \ Decrease the quantity of meal in exis
 Cart   -- PUT   --  Working --  Remove meal from cart 
 Cart   -- DEL   --  Working --  Delete the cart in case the meal and the meal is the last meal in the cart 
 Orders -- POST  -- Working  -- Create Order take the cart data and create order with default status CREATED
-Orders -- PUT --        -- Change order status, will send ordernumber and the new status 
-Orders -- POST --       -- get list of orders per status 
-Orders -- POST  --      --  send the customer mobile number to get the customer order history 
+Orders -- PUT --   Working     -- Change order status, will send ordernumber and the new status 
+Orders -- POST --   Working   -- get list of orders per status 
+Orders -- POST  --  Working    --  send the customer mobile number to get the customer order history 
+Orders -- POST  --   Working   --  Event Driven > when the order status change the customer gets SMS 
 
 == Data Model ==
 
@@ -108,12 +109,21 @@ Other Attributes:
 
 ========================================
 
-nvm 20
-serverless framework version  node 20.11.1, framework 3.36.0
+Node and other setups  
+nvm install 
+`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
+source ~/.nvm/nvm.sh
+nvm install 20  
+nvm use 20
+npm install -g serverless@3
+create iam user serlerlessUser then configure the terminal 
+    serverless config credentials --provider aws --key <your-aws-access-key> --secret <your-aws-secret-key> --profile <profile-name>
+    nano ~/.aws/credentials
+npm install
+npm install aws-sdk -save-
+npm i --save @aws-sdk/client-dynamodb -save
+npm i --save @aws-sdk/client-eventbridge -save
 
-create iam user serlerlessUser
-serverless config credentials --provider aws --key <your-aws-access-key> --secret <your-aws-secret-key> --profile <profile-name>
-nano ~/.aws/credentials
 
 initiate new project 
 serverless create --template aws-nodejs-typescript
@@ -125,13 +135,22 @@ work on the directory structure
 
 
 Dynamodb necessary setup
-plan for the data model first
-maitain the serverless/resourcesDynamo.ts
-declare the dynamoResources in the resources sections at serverless.ts
-also add the iam section
-npm i --save @aws-sdk/client-dynamodb -save
+    plan for the data model first
+    maitain tel he serverless/resourcesDynamo.ts
+    declarebi the dynamoResources in the resources sections at serverless.ts
+    also add the iam section
+    npm imo --save @aws-sdk/client-dynamodb -save
+   e the  Enabling streams on the order table 
+tak
+Event Driven necessary setups 
+    first you need to e nable streams on the orders table 
+        just add the SntreamSpecification to the table 
+        StreamSpecctioification: {
+        Streaa funmViewType: 'NEW_IMAGE'
+        },mbd
+    second: create lambda take the mobile number from the order and send SMS using SNS SMS without topic 
 
-setup cognito pool
+
 
 
 npx create-react-app frontend --template typescript

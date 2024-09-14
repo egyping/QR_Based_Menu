@@ -48,7 +48,6 @@ const functions: AWS['functions'] = {
           method: 'post',
           path: 'auth/login',
           cors: corsSettings,
-          authorizer,
         },
       },
     ],
@@ -180,6 +179,48 @@ changeOrderStatus: {
   ],
 },
 
+getOrdersByStatus: {
+  handler: 'src/functions/order/getOrdersByStatus/index.handler',
+  events: [
+    {
+      http: {
+        method: 'post',
+        path: 'orders/status',
+        cors: corsSettings,
+        authorizer,
+      },
+    },
+  ],
+},
+
+getOrdersByCustomer: {
+  handler: 'src/functions/order/getOrdersByCustomer/index.handler',
+  events: [
+    {
+      http: {
+        method: 'post',
+        path: 'orders/customer',
+        cors: corsSettings,
+        authorizer,
+      },
+    },
+  ],
+},
+
+sendSMS: {
+  handler: 'src/functions/order/sendSMS/index.handler',
+  events: [
+    {
+      stream: {
+        type: 'dynamodb',
+        arn: {
+          'Fn::GetAtt': ['OrdersTable', 'StreamArn'],
+        },
+        batchSize: 1,
+      },
+    },
+  ],
+},
 
 };
 export default functions;

@@ -51,6 +51,10 @@ const dynamoResources: AWS['resources']['Resources'] = {
         },
       ],
       BillingMode: 'PAY_PER_REQUEST',
+      // enable stream
+      StreamSpecification: {
+        StreamViewType: 'NEW_IMAGE'
+    },
     },
   },
 

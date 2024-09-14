@@ -10,9 +10,10 @@
     "node": ">=14.15.0"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.637.0",
+    "@aws-sdk/client-dynamodb": "^3.650.0",
+    "@aws-sdk/client-eventbridge": "^3.651.1",
     "@aws-sdk/lib-dynamodb": "^3.75.0",
-    "aws-sdk": "^2.1687.0",
+    "aws-sdk": "^2.1691.0",
     "csvtojson": "^2.0.10",
     "source-map-support": "^0.5.19"
   },

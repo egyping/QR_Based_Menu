@@ -3,6 +3,7 @@ import type { AWS } from '@serverless/typescript';
 import functions from './serverless/functions';
 import dynamoResources  from './serverless/dynamoResources';
 import cognitoResources from './serverless/cognitoResources';
+import snsResources from './serverless/snsResources'
 
 const serverlessConfiguration: AWS = {
   
@@ -27,6 +28,9 @@ const serverlessConfiguration: AWS = {
       ORDERS_TABLE: '${self:custom.stage}-Orders',
       CUSTOMERS_TABLE: '${self:custom.stage}-Customers',
       COGNITO_USER_POOL_CLIENT_ID: { Ref: 'CognitoUserPoolClient' },
+      ORDER_STATUS_SMS_TOPIC_ARN: {
+        Ref: 'OrderStatusSMSTopic',
+      },
     },
 
     iam: {
@@ -59,6 +63,13 @@ const serverlessConfiguration: AWS = {
             Action: ['s3:GetObject', 's3:PutObject'],
             Resource: 'arn:aws:s3:::qrmenuimages/*',
           },
+          {
+            Effect: 'Allow',
+            Action: [
+              'sns:Publish',
+            ],
+            Resource: '*',
+          },
         ],
       },
     },
@@ -71,11 +82,20 @@ const serverlessConfiguration: AWS = {
     Resources: {
       ...dynamoResources,
       ...cognitoResources,
+      ...snsResources,
     },
   },
 
   custom: {
     stage: '${opt:stage, "dev"}',
+    //eventBrigeBusName: 'ordersEventBus',
+    smsSettings: {
+      defaultSMSType: 'Transactional',
+      defaultSenderID: 'YourSenderID',
+      deliveryStatusIAMRole: {
+        'Fn::GetAtt': ['DeliveryStatusIAMRole', 'Arn'],
+      },
+    },
     esbuild: {
       bundle: true,
       minify: false,
