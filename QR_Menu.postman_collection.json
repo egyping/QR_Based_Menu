@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "30d93c11-df94-408d-a930-8b5183ead7f1",
+		"name": "QR_Menu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1699627"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"F_A_H_D@hotmail.com\",\n  \"password\": \"Start@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/auth/login",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "share",
+							"disabled": true
+						},
+						{
+							"key": "source",
+							"value": "copy-link",
+							"disabled": true
+						},
+						{
+							"key": "creator",
+							"value": "1699627",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Meal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "B",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Pizza Cheese 3\",\n  \"description\": \"Pizza cheese with tomato 3\",\n  \"price\": 16.00,\n  \"imageUrl\": \"https://qrmenuimages.s3.amazonaws.com/brooke-lark-W9OKrxBqiZA-unsplash.jpg\",\n  \"status\": \"disabled\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/meals",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"meals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Meals",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/allmeals",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"allmeals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enabled Meals",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/allmeals",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"allmeals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Meal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"Enabled\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/meals/e5099e59-335d-4e36-ab62-d7872e1aa631",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"meals",
+						"e5099e59-335d-4e36-ab62-d7872e1aa631"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add meal to cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerMobileNumber\": \"98893088\",\n  \"mealId\": \"56d2e8e4-0bf3-4401-8928-b6cfa4f218b1\",\n  \"quantity\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/cart",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get meals ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/meals",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"meals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cart increase meal quantity ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJhNTY3OWMzMS00ZDJlLTRmNmMtYmVlMC03NGQ5YTEwYTQwOTgiLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiM2ZkZWJhNDktOTExYS00ZmY0LTkxZWItMWUxOGM3NDg2YzVhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE2ODcyODgsImV4cCI6MTczMTY5MDg4OCwiaWF0IjoxNzMxNjg3Mjg4LCJqdGkiOiJmZDliNzgyNy1iYjM5LTQ1MjItOGJkZi05MzI3MDQ5NWFmZDQiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.kdcgNW0n5a9D-jsBIGteVyI95AenmjnBDoNgYkiIuocveNK8rVdNz-FyHK3KRxEbk3re9n4hnoseqeJ6fFUVv3NfBoeijWEHw1otYzkUecoPDLnjpOw6LEcdqXVvXUt613w-fKGCyfL5h-lrwR67PjZ8z8Gr0_aNumfzY__DT7IEnHU_Z5vh00kVEa2b8goNbPSnKIHcjvcrBkALLhMm5NdKJA4VOEvkSJsa3UDaRku3kbZz_etq3iieDVDSsBwo9IjF2y6NNLpq1k0j0UJrk2iThmCaZi4XmIlpCON5b66VJPN1o-Hg4oJTBu1GI3pZA2DHMkhT8VvbKY24CCfGcg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/atom+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cartId\": \"7c1a6e54-f06e-4f8f-b9fd-c7b6615280d7\",\n  \"mealId\": \"61047c15-2b1c-4b2b-b0e8-c944195934e4\",\n  \"quantity\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/cart/increase-quantity",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"cart",
+						"increase-quantity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cart remove meal ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJhNTY3OWMzMS00ZDJlLTRmNmMtYmVlMC03NGQ5YTEwYTQwOTgiLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiM2ZkZWJhNDktOTExYS00ZmY0LTkxZWItMWUxOGM3NDg2YzVhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE2ODcyODgsImV4cCI6MTczMTY5MDg4OCwiaWF0IjoxNzMxNjg3Mjg4LCJqdGkiOiJmZDliNzgyNy1iYjM5LTQ1MjItOGJkZi05MzI3MDQ5NWFmZDQiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.kdcgNW0n5a9D-jsBIGteVyI95AenmjnBDoNgYkiIuocveNK8rVdNz-FyHK3KRxEbk3re9n4hnoseqeJ6fFUVv3NfBoeijWEHw1otYzkUecoPDLnjpOw6LEcdqXVvXUt613w-fKGCyfL5h-lrwR67PjZ8z8Gr0_aNumfzY__DT7IEnHU_Z5vh00kVEa2b8goNbPSnKIHcjvcrBkALLhMm5NdKJA4VOEvkSJsa3UDaRku3kbZz_etq3iieDVDSsBwo9IjF2y6NNLpq1k0j0UJrk2iThmCaZi4XmIlpCON5b66VJPN1o-Hg4oJTBu1GI3pZA2DHMkhT8VvbKY24CCfGcg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cartId\": \"cfffae8b-47ef-41cd-823f-c260956d59c1\",\n  \"mealId\": \"56bccf94-98d1-483f-84f8-ffbea3ff91db\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/cart/remove-meal",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"cart",
+						"remove-meal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CART Delete cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJhNTY3OWMzMS00ZDJlLTRmNmMtYmVlMC03NGQ5YTEwYTQwOTgiLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiM2ZkZWJhNDktOTExYS00ZmY0LTkxZWItMWUxOGM3NDg2YzVhIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE2ODcyODgsImV4cCI6MTczMTY5MDg4OCwiaWF0IjoxNzMxNjg3Mjg4LCJqdGkiOiJmZDliNzgyNy1iYjM5LTQ1MjItOGJkZi05MzI3MDQ5NWFmZDQiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.kdcgNW0n5a9D-jsBIGteVyI95AenmjnBDoNgYkiIuocveNK8rVdNz-FyHK3KRxEbk3re9n4hnoseqeJ6fFUVv3NfBoeijWEHw1otYzkUecoPDLnjpOw6LEcdqXVvXUt613w-fKGCyfL5h-lrwR67PjZ8z8Gr0_aNumfzY__DT7IEnHU_Z5vh00kVEa2b8goNbPSnKIHcjvcrBkALLhMm5NdKJA4VOEvkSJsa3UDaRku3kbZz_etq3iieDVDSsBwo9IjF2y6NNLpq1k0j0UJrk2iThmCaZi4XmIlpCON5b66VJPN1o-Hg4oJTBu1GI3pZA2DHMkhT8VvbKY24CCfGcg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Transfer-Encoding",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cartId\": \"b88ccd7a-c994-446c-8a71-fd036a443237\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/cart",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders Create order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJjOGU4ZGVhNC03YTFiLTQ5YzUtYWU1Yy1kNjVkYjkzMzc2ZjYiLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiYzc1ZTIwNTAtYTc3NS00YTNjLWFiYTgtMGEzN2ExNmYxYzc1IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE2ODgwMzMsImV4cCI6MTczMTY5MTYzMywiaWF0IjoxNzMxNjg4MDMzLCJqdGkiOiI1YmRmODhhOS1mODY1LTQ4NWMtOWRiMC1lZDJmNDI3NGJiYTYiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.l1YZ2GbwlYRbBEdoSU1RJ-2UwiOLjdGBeTCK_C3rEdrp-qLeNd3lATGATQZzb2LVIA-1LDl2N8_TeYZjOEc8y15ytqRJbDuOVTRBRuizYk_fEZZH3hDU_-8CrJEeJD1_21FjXI7ytGPzaCXbIK1WalufsOVYg8QPHxAV8BeRp31vG42ZDBhVfEvcYntTycfbXegsh5vQaFzmDeNRfOt4WfBTa9VFZ9KMpvhlFNTqt1c0PIw5KCsLmAvghaSXl-OXmG9Pn1CJek_HJrgDHv2_nAKuzzfrI2EmFCfuiyaCKcYrnV7QGzsA_tgBAzEa3ULg-2clavMC8IKy8UeQoS3uAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cart\": {\n    \"createdAt\": \"2024-11-15T16:25:58.850Z\",\n    \"totalAmount\": 240,\n    \"items\": [\n     {\n            \"price\": 16,\n            \"mealId\": \"61047c15-2b1c-4b2b-b0e8-c944195934e4\",\n            \"quantity\": 5\n        },\n        {\n            \"price\": 16,\n            \"mealId\": \"c1a02ed2-569a-461b-96cc-f5347426d832\",\n            \"quantity\": 5\n        },\n        {\n            \"mealId\": \"56d2e8e4-0bf3-4401-8928-b6cfa4f218b1\",\n            \"quantity\": 5,\n            \"price\": 16\n        }\n    ],\n    \"customerMobileNumber\": \"98893088\",\n    \"cartId\": \"60bdbf14-6971-4f5a-99e7-f0094c767215\"\n  },\n  \"customerName\": \"Fahd Mannaa\",\n  \"customerMobileNumber\": \"98893088\",\n  \"tableNumber\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/order",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders change order status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"READY\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/order/08ea716e-684b-4225-8a04-29b11d0ff2be/status",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"order",
+						"08ea716e-684b-4225-8a04-29b11d0ff2be",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders get orders per status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"READY\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/orders/status",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"orders",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders History by mobile number",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJiMlBoK3JvVVRQdFwvOUI3WFJzNENQUnpyRGJlZ3duQWxaMTE1SThENnJqRT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhNDM4ZDQ4OC02MGUxLTcwZTctY2M2YS1lN2Y1NTAxMDEzZWUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfVDU3bGkwakR0IiwiY29nbml0bzp1c2VybmFtZSI6ImE0MzhkNDg4LTYwZTEtNzBlNy1jYzZhLWU3ZjU1MDEwMTNlZSIsIm9yaWdpbl9qdGkiOiJiNDJhMzU0Zi0xYzQ3LTQ0Y2UtYWI4MC1kZjQ2NGU4ODAzMjciLCJhdWQiOiI3dGZkcGdrOWU2Y252NmdkbDVsN2luNmhrMiIsImV2ZW50X2lkIjoiMjM5MTFiNGMtNmM0Ny00NmY4LWEzODItZWU1YzNkYTk1ODk2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE3MzE3NDY3NzYsImV4cCI6MTczMTc1MDM3NiwiaWF0IjoxNzMxNzQ2Nzc2LCJqdGkiOiJkNDdlOTYxZC0zMjMwLTQwOGItYTIzMy04MzBiYWM5MDk4NjUiLCJlbWFpbCI6IkZfQV9IX0RAaG90bWFpbC5jb20ifQ.d-LfxZu8OqTu7Xz8wN75MvZ-WqAti93HJHtCHbmEoShLPbI2ZLBrwVh2oZMpyxycExAjmxk6jPmsDFTIhmiAcYZaZOS4onh4ptZRWnwl2mNhwD7Ikmc0EnQBRMlAxEavd5i580cr9zmiRQVMXXz8nWWw9ECxGqw_P6Zl1M_Z7pIM8_Ihf6qUyJY6U0BmEhktsoNiOOtSlgCmNcmbllhjXNzBca8akzC8f1xq_dyx7NLsGD4spuadqLDFxQPCPQJnQ08TMEW7nFet2haCpAJ1uBtNMHD2Zkv6kwlZyPkxMDwknQHocJ1VfIu7Q5SywNS-5zvyoqkldg2wKNG376N0Og",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerMobileNumber\": \"98893088\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cstfc7sprg.execute-api.us-east-1.amazonaws.com/dev/orders/customer",
+					"protocol": "https",
+					"host": [
+						"cstfc7sprg",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"orders",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
